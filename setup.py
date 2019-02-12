@@ -1,7 +1,7 @@
 import os
 import sys
 from setuptools import find_packages, setup
-from oscar import get_version
+
 
 CODE_DIR = 'oscar'
 PROJECT_DIR = os.path.dirname(__file__)
@@ -10,9 +10,27 @@ with open(os.path.join(os.path.dirname(__file__), 'README.rst')) as readme:
     README = readme.read()
 
 
-os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
-sys.path.append(os.path.join(PROJECT_DIR, CODE_DIR))
+# os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
+# sys.path.append(PROJECT_DIR)
+# from oscar import get_version # noqa isort:skip
+#
+
+
+# # Use 'dev', 'beta', or 'final' as the 4th element to indicate release type.
+VERSION = (1, 6, 7, 'beta', 0)
+
+
+def get_version():
+    version = '%s.%s' % (VERSION[0], VERSION[1])
+    # Append 3rd digit if > 0
+    if VERSION[2]:
+        version = '%s.%s' % (version, VERSION[2])
+    elif VERSION[3] != 'final':
+        version = '%s %s' % (version, VERSION[3])
+        if len(VERSION) == 5:
+            version = '%s %s' % (version, VERSION[4])
+    return version
 
 install_requires = [
     'django>=1.11,<2.2',

@@ -1,5 +1,6 @@
-Copyright (c) 2011-present This License-Holding Repository's Owner and individual contributors.
+Copyright (c) 2011-present 'django-oscar-catalogue' Owner and individual contributors.
 All rights reserved.
+
 
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
@@ -7,21 +8,27 @@ are permitted provided that the following conditions are met:
     1. Redistributions of source code must retain the above copyright notice,
        this list of conditions and the following disclaimer.
    
-    2. Redistributions in binary form must reproduce the above copyright
-       notice, this list of conditions and the following disclaimer in the
-       documentation and/or other materials provided with the distribution.
+    2. Redistributions in binary form must reproduce the above copyright notice,
+       this list of conditions and the following disclaimer in the documentation and/or
+       other materials provided with the distribution.
 
-    3. Neither the name of Tangent Communications PLC nor the names of its contributors 
+    3. Neither the name of Tangent Communications PLC nor the names of 'django-oscar' contributors
        may be used to endorse or promote products derived from this software without
        specific prior written permission.
 
-    4. Neither the name of this license-holding repository's owner nor the names of its contributors 
-       may be used to endorse or promote products derived from this software without
+    4. Neither the name of this 'django-oscar-catalogue' Owner, nor the names of its contributors
+       may be used to endorse or promote products derived from this software or the source code itself without
        specific prior written permission.
 
     5. This Software or any portion of it is not under any guarantee. Neither the license-holding 
        repository's owner nor its contributors will be liable in any manner for any loss/damage/any 
        other claims.
+
+    6. Hereby this license allows personal or proprietary use and allows the software released under the license
+       to be incorporated into proprietary products.
+
+    7. Hereby this license allows any user to freely modify or distribute the software and create or distribute
+       derivatives until the original copyright is retained with the derivatives.
 
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND

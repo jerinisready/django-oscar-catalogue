@@ -198,8 +198,11 @@ While Switching to Django Oscar
 
 LICENSE
 ````````
-Oscar is released under the permissive New BSD license (see summary).
-LICENSE is added in the "LICENSE" file.
+Django - Oscar is released under the permissive New BSD license (see summary).
+
+The basic copy of this project is forked from https://github.com/django-oscar/django-oscar/ and is liable to follow its license.
+
+from LICENSE is added in the "LICENSE" file.
 
 
 Contributors

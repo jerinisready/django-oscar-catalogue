@@ -1,7 +1,7 @@
 django>=1.11
 pillow>=4.0
-django-haystack<3.0.0,>=2.5.0
-django-treebeard>=4.3.0
+django-haystack>=2.5
+django-treebeard>=4.3
 sorl-thumbnail<12.5,>=12.4.1
 django-tables2<2.0,>=1.19
-django-widget-tweaks>=1.4.1
+django-widget-tweaks>=1.4

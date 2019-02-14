@@ -2,9 +2,9 @@ include LICENSE
 include README.rst
 include README.md
 include .gitignore
-recursive-include oscar-catalogue/locale/*
-recursive-include oscar-catalogue/static/*
-recursive-include oscar-catalogue/templates/*
+recursive-include src/oscar/locale *
+recursive-include src/oscar/static *
+recursive-include src/oscar/templates *
 
 
 

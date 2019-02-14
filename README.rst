@@ -1,6 +1,22 @@
-======================
 DJANGO OSCAR CATALOGUE
 ======================
+
+
+.. image:: https://img.shields.io/badge/Made%20with-Python-1f425f.svg
+   :target: https://www.python.org/
+.. image:: https://img.shields.io/pypi/djversions/django-oscar-catalogue.svg?style=flat
+.. image:: https://img.shields.io/pypi/pyversions/django-oscar-catalogue.svg?style=flat
+.. image:: https://img.shields.io/pypi/wheel/django-oscar-catalogue.svg?style=flat
+.. image:: https://img.shields.io/librariesio/github/jerinisready/django-oscar-catalogue.svg?label=Dependencies&style=flat
+.. image:: https://img.shields.io/github/license/jerinisready/django-oscar-catalogue.svg?style=flat
+.. image:: https://img.shields.io/badge/PyPi_Package-django_oscar_catalogue-25ABFF.svg
+.. image:: https://img.shields.io/pypi/status/django-oscar-catalogue.svg?style=flat
+.. image:: https://img.shields.io/pypi/format/django-oscar-catalogue.svg?style=flat
+.. image:: https://img.shields.io/github/commit-activity/y/jerinisready/django-oscar-catalogue.svg?style=flat
+.. image:: https://img.shields.io/github/contributors/jerinisready/django-oscar-catalogue.svg?label=Contributors&style=flat
+.. image:: https://img.shields.io/pypi/implementation/django-oscar-catalogue.svg?label=Implementation&style=flat
+.. image:: https://img.shields.io/pypi/v/django-oscar-catalogue.svg?colorB=orange&label=PyPi&style=flat
+.. image:: https://img.shields.io/pypi/l/django-oscar-catalogue.svg?style=flat&label=License
 
 Django Oscar Catalogue is a small packet of code extracted from Django Oscar,
 to isolate the catalogue module independantly along with its dashboard.
@@ -24,7 +40,6 @@ README - Django-Oscar-Catalogue
 =================================
 
 
-Main Setting Dependancies are updated in  README.md
 API Documentation for catalogue can be referred from official Documentation of django-oscar.
 
 
@@ -33,13 +48,17 @@ Packages.
 
 Ensure these Python packages are added in your environment.
 
-1) haystack
+1) haystack          # Search support
 
-2) treebeard
+2) treebeard         # Treebeard is used for categories
 
-3) sorl.thumbnail
+3) sorl_thumbnail    # Sorl is used as the default thumbnailer
 
-4) django_tables2
+4) django_tables2    # Used for automatically building larger HTML tables
+
+5) Pillow            # PIL is required for image fields, Pillow is the "friendly" PIL fork
+
+6) django-widget-tweaks   # Used for manipulating form field attributes in templates (eg: add a css class)
 
 
 SETTINGS FOR PACKAGE
@@ -65,18 +84,23 @@ You can override them after importing these settings in your settings.py .
     ]
 
 Django Oscar uses ``django.contrib.flatpages.middleware.FlatpageFallbackMiddleware``
-to handle urls.
+to handle url fallbacks .
 
-Oscar Guides Django uses 'OSCAR_MAIN_TEMPLATE_DIR' to search for templates.
+Oscar Guides Django to use 'OSCAR_MAIN_TEMPLATE_DIR' to search for oscar templates.
 
 Oscar-Catalogue uses 'oscar.template_loaders.OscarLoader' as template loader.
+This have nothing to do with oscar, and also django oscar do not have a package named template_loaders.
 
-But when you switch to `django-oscar` package this can be removed.
+But when you switch to `django-oscar` package this line can be removed.
+
+CONCEPT :
 
 .. code-block:: python
 
-    TEMPLATES['context_processors'].append('oscar.core.context_processors.metadata')
-    TEMPLATES['loaders'].append('oscar.template_loaders.OscarLoader')
+    TEMPLATES[0]['OPTIONS']['context_processors'].append('oscar.core.context_processors.metadata')
+    TEMPLATES[0]['OPTIONS']['loaders'].append('django.template.loaders.app_directories.Loader')
+    TEMPLATES[0]['OPTIONS']['loaders'].append('oscar.template_loaders.OscarLoader')
+
 
 Oscar Guides Django uses 'HAYSTACK_CONNECTIONS' To establish Haystack for search.
 
@@ -150,14 +174,50 @@ in your ``urls.py``; append:
 
     urlpatterns = [
         ...
-        path('oscar/', include( application.urls[:2] )),
+
+        path('oscar/', include( application.urls[:2] )),    # NOQA, Depndancy; # only to be used with oscar_catalogue not with oscar
         ...
     ]
+    """
+    Note that "application.urls[:2]" will be used with django oscar catalogue and
+    "application.urls" will be used with django oscar.
+    """
 
+
+
+While Switching to Django Oscar
+```````````````````````````````
+1) In your local, pull a new branch.
+
+2) Keep all your code as it is.
+
+3) pip uninstall django-oscar-catalogue
+
+4) pip install django-oscar >
+
+
+LICENSE
+````````
+Oscar is released under the permissive New BSD license (see summary).
 LICENSE is added in the "LICENSE" file.
 
-We Call for contributions to make it efficient, up-to-date with django-oscar, and issue fixing
 
-Pull a PR and Contributors List will be managed Soon. or else Raise an Issue to support us!
+Contributors
+````````````
+We acknowledge and respect contributions towards django-oscar!
+
+
+Contributing
+`````````````
+If you want to contribute to a project and make it better, your help is very welcome. Contributing is also a great way
+to learn more about social coding on Github, new technologies and and their ecosystems and how to make constructive,
+helpful bug reports, feature requests and the noblest of all contributions: a good, clean pull request.
+
+django-oscar-contrib turned into a Github repository so you can, you know, contribute to it by making pull requests
+We Call for contributions to make it efficient, up-to-date with django-oscar, and fixing any issue raised by others.
+
+Pull a PR and Contributors List will be managed Soon.
+If you find any bugs or issues, or anything regarding usage, feel free to use issue page.
+Racing an issue is the greatest way to support us.
 
 

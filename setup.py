@@ -17,7 +17,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 # from oscar import get_version # noqa isort:skip
 
 # # Use 'dev', 'beta', or 'final' as the 4th element to indicate release type.
-VERSION = (1, 6, 7, 'beta', 0)
+VERSION = (0, 0, 1, 'beta', 1)
 
 
 def get_version():

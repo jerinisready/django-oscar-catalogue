@@ -11,7 +11,7 @@
 ![](https://img.shields.io/badge/PyPi_Package-django_oscar_catalogue-25ABFF.svg)
 ![](https://img.shields.io/pypi/status/django-oscar-catalogue.svg?style=flat)
 ![](https://img.shields.io/pypi/format/django-oscar-catalogue.svg?style=flat)
-![](https://img.shields.io/github/commit-activity/y/jerinisready/django-oscar-catalogue.svg?style=flat)
+![](https://img.shields.io/github/commit-activity/m/jerinisready/django-oscar-catalogue.svg?style=flat)
 ![](https://img.shields.io/github/contributors/jerinisready/django-oscar-catalogue.svg?label=Contributors&style=flat)
 ![](https://img.shields.io/pypi/implementation/django-oscar-catalogue.svg?label=Implementation&style=flat)
 ![](https://img.shields.io/pypi/v/django-oscar-catalogue.svg?colorB=orange&label=PyPi&style=flat)
